@@ -32,10 +32,10 @@ android {
         }
         create("coexist") {
             dimension = "app"
-            applicationId = "com.TXT.compare"
-            manifestPlaceholders["appName"] = "TXTcompare"
-            versionCode = 268
-            versionName = "2.6.8"
+      applicationId = "com.txtdifferent.compare"
+            manifestPlaceholders["appName"] = "TXT对比"
+            versionCode = 109
+            versionName = "1.0.9"
         }
     }
 
