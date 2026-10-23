@@ -45,7 +45,7 @@ jobs:
 
       - name: Build APK (coexist)
         if: github.event_name == 'workflow_dispatch'
-        run: flutter build apk --release --flavor coexist --dart-define=APP_NAME=TXTcompare
+        run: flutter build apk --release --flavor coexist --dart-define=APP_NAME=TXT对比
 
       - name: Upload prod APK
         if: github.event_name == 'workflow_dispatch'
