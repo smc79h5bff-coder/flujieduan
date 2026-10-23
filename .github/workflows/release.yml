@@ -54,14 +54,14 @@ jobs:
           git diff --staged --quiet || git commit -m "chore: 补全 pubspec.lock [skip ci]"
           git diff --staged --quiet || git push origin HEAD
 
-      - run: flutter build apk --release --flavor prod --target-platform android-arm64
-      - run: flutter build apk --release --flavor coexist --target-platform android-arm64
+      - run: flutter build apk --release --flavor prod --target-platform android-arm64 --dart-define=APP_NAME=TxTdiff
+      - run: flutter build apk --release --flavor coexist --target-platform android-arm64 --dart-define=APP_NAME=TXTcompare
 
       - name: 整理
         run: |
           mkdir -p out
           cp build/app/outputs/flutter-apk/app-prod-release.apk "out/TxTdiff.apk"
-          cp build/app/outputs/flutter-apk/app-coexist-release.apk "out/TXT对比.apk"
+          cp build/app/outputs/flutter-apk/app-coexist-release.apk "out/TXTcompare.apk"
 
       - uses: softprops/action-gh-release@v2
         with:
@@ -69,5 +69,5 @@ jobs:
           name: ${{ github.event.inputs.tag }}
           body: |
             - TxTdiff.apk
-            - TXT对比.apk
+            - TXTcompare.apk
           files: out/*.apk
