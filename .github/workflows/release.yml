@@ -55,13 +55,13 @@ jobs:
           git diff --staged --quiet || git push origin HEAD
 
       - run: flutter build apk --release --flavor prod --target-platform android-arm64 --dart-define=APP_NAME=TxTdiff
-      - run: flutter build apk --release --flavor coexist --target-platform android-arm64 --dart-define=APP_NAME=TXTcompare
+      - run: flutter build apk --release --flavor coexist --target-platform android-arm64 --dart-define=APP_NAME=TXT对比
 
       - name: 整理
         run: |
           mkdir -p out
           cp build/app/outputs/flutter-apk/app-prod-release.apk "out/TxTdiff.apk"
-          cp build/app/outputs/flutter-apk/app-coexist-release.apk "out/TXTcompare.apk"
+          cp build/app/outputs/flutter-apk/app-coexist-release.apk "out/TXT对比.apk"
 
       - uses: softprops/action-gh-release@v2
         with:
