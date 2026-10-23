@@ -69,5 +69,5 @@ jobs:
           name: ${{ github.event.inputs.tag }}
           body: |
             - TxTdiff.apk
-            - TXTcompare.apk
+            - TXT对比.apk
           files: out/*.apk
